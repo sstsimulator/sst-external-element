@@ -11,6 +11,13 @@ SimpleExternalElement::SimpleExternalElement( SST::ComponentId_t id, SST::Params
 	if( ! (printFreq > 0) ) {
 		output.fatal(CALL_INFO, -1, "Error: printFrequency must be greater than zero.\n");
 	}
+
+	// Just register a plain clock for this simple example
+    	registerClock("100MHz", new SST::Clock::Handler<SimpleExternalElement>(this, &SimpleExternalElement::clockTick));
+
+	// Tell SST to wait until we authorize it to exit
+    	registerAsPrimaryComponent();
+    	primaryComponentDoNotEndSim();
 }
 
 SimpleExternalElement::~SimpleExternalElement() {
@@ -33,6 +40,7 @@ bool SimpleExternalElement::clockTick( SST::Cycle_t currentCycle ) {
 	}
 
 	if( repeats == maxRepeats ) {
+		primaryComponentOKToEndSim();
 		return true;
 	} else {
 		return false;

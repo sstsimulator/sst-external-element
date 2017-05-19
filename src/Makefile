@@ -9,7 +9,6 @@ libsimpleExternalElement.so: simpleExternalElement.cc
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $<
 
 install:
-	echo "Installing simpleExternalElement into the SST registry..."
 	sst-register simpleExternalElement simpleExternalElement_LIBDIR=$(CURDIR)
 
 clean:
