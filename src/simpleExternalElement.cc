@@ -3,7 +3,9 @@
 #include "simpleExternalElement.h"
 
 SimpleExternalElement::SimpleExternalElement( SST::ComponentId_t id, SST::Params& params ) :
-	repeats(0) {
+	SST::Component(id), repeats(0) {
+
+	output.init("SimpleExternalElement-" + getName() + "-> ", 1, 0, SST::Output::STDOUT);
 
 	printFreq  = params.find<SST::Cycle_t>("printFrequency", 5);
 	maxRepeats = params.find<SST::Cycle_t>("repeats", 10);
@@ -11,6 +13,9 @@ SimpleExternalElement::SimpleExternalElement( SST::ComponentId_t id, SST::Params
 	if( ! (printFreq > 0) ) {
 		output.fatal(CALL_INFO, -1, "Error: printFrequency must be greater than zero.\n");
 	}
+
+	output.verbose(CALL_INFO, 1, 0, "Config: maxRepeats=%" PRIu64 ", printFreq=%" PRIu64 "\n",
+		static_cast<uint64_t>(maxRepeats), static_cast<uint64_t>(printFreq));
 
 	// Just register a plain clock for this simple example
     	registerClock("100MHz", new SST::Clock::Handler<SimpleExternalElement>(this, &SimpleExternalElement::clockTick));
@@ -25,11 +30,11 @@ SimpleExternalElement::~SimpleExternalElement() {
 }
 
 void SimpleExternalElement::setup() {
-	printf("Component is being setup.\n");
+	output.verbose(CALL_INFO, 1, 0, "Component is being setup.\n");
 }
 
 void SimpleExternalElement::finish() {
-	printf("Component is finished.\n");
+	output.verbose(CALL_INFO, 1, 0, "Component is being finished.\n");
 }
 
 bool SimpleExternalElement::clockTick( SST::Cycle_t currentCycle ) {
