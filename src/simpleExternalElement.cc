@@ -41,8 +41,9 @@ bool SimpleExternalElement::clockTick( SST::Cycle_t currentCycle ) {
 
 	if( currentCycle % printFreq == 0 ) {
 		output.verbose(CALL_INFO, 1, 0, "Hello World!\n");
-		repeats++;
 	}
+
+	repeats++;
 
 	if( repeats == maxRepeats ) {
 		primaryComponentOKToEndSim();
