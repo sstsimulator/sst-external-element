@@ -12,4 +12,4 @@ install:
 	sst-register simpleExternalElement simpleExternalElement_LIBDIR=$(CURDIR)
 
 clean:
-	rm *.o libsimpleExternalElement.so
+	rm -f *.o libsimpleExternalElement.so
