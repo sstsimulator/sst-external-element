@@ -1,5 +1,5 @@
 WARNING: Building component "simpleExternalElement" with no links assigned.
-SimpleExternalElement-simpleExternalElement-> Config: maxRepeats=15, printFreq=10
+SimpleExternalElement-simpleExternalElement-> Config: maxRepeats=15, printFreq=5
 SimpleExternalElement-simpleExternalElement-> Component is being setup.
 SimpleExternalElement-simpleExternalElement-> Hello World!
 SimpleExternalElement-simpleExternalElement-> Hello World!
@@ -17,4 +17,4 @@ SimpleExternalElement-simpleExternalElement-> Hello World!
 SimpleExternalElement-simpleExternalElement-> Hello World!
 SimpleExternalElement-simpleExternalElement-> Hello World!
 SimpleExternalElement-simpleExternalElement-> Component is being finished.
-Simulation is complete, simulated time: 1.5 us
+Simulation is complete, simulated time: 750 ns
