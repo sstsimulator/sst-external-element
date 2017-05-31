@@ -20,6 +20,7 @@ public:
 		SimpleExternalElement,
 		"simpleExternalElement",
 		"SimpleExternalElement",
+		SST_ELI_ELEMENT_VERSION( 1, 0, 0 ),
 		"Demonstration of an External Element for SST",
 		COMPONENT_CATEGORY_PROCESSOR
 	)
@@ -30,10 +31,6 @@ public:
 		{ "printFrequency", "How frequently to print a message from the component", "5" },
 		{ "repeats", "Number of repetitions to make", "10" }
 	)
-
-	SST_ELI_DOCUMENT_STATISTICS( )
-	SST_ELI_DOCUMENT_PORTS( )
-	SST_ELI_DOCUMENT_SUBCOMPONENT_SLOTS( )
 
 private:
 	SST::Output output;
