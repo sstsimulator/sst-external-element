@@ -25,8 +25,6 @@ public:
 		COMPONENT_CATEGORY_PROCESSOR
 	)
 
-	SST_ELI_DOCUMENT_VERSION( 1, 0, 0 )
-
 	SST_ELI_DOCUMENT_PARAMS(
 		{ "printFrequency", "How frequently to print a message from the component", "5" },
 		{ "repeats", "Number of repetitions to make", "10" }
