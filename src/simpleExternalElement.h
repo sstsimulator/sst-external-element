@@ -13,7 +13,7 @@
 #define _SIMPLE_EXTERNAL_ELEMENT_H
 
 #include <sst/core/component.h>
-#include <sst/core/elementinfo.h>
+#include <sst/core/eli/elementinfo.h>
 
 class SimpleExternalElement : public SST::Component {
 
