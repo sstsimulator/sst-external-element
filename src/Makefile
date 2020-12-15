@@ -10,6 +10,8 @@ libsimpleExternalElement.so: simpleExternalElement.cc
 
 install:
 	sst-register simpleExternalElement simpleExternalElement_LIBDIR=$(CURDIR)
+	sst-register SST_ELEMENT_SOURCE impleExternalElement=$(CURDIR)
+	sst-register SST_ELEMENT_TESTS  impleExternalElement=$(CURDIR)/../tests
 
 clean:
 	rm -f *.o libsimpleExternalElement.so
