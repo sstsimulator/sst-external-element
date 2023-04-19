@@ -42,7 +42,9 @@ class testcase_sstexternalelement(SSTTestCase):
         super(type(self), self).tearDown()
 
 #####
-
+    
+    @unittest.skipIf(testing_check_get_num_ranks() > 1, "SSTExternalElement: simplElementExample-test-001 skipped if ranks > 1 - single component in config")
+    @unittest.skipIf(testing_check_get_num_threads() > 1, "SSTExternalElement: simplElementExample-test-001 skipped if threads > 1 - single component in config")
     def test_sstexternalelement_001(self):
         self.sstexternalelement_test_template("simpleElementExample-test-001")
 
