@@ -19,8 +19,8 @@ echo "Running ${LIBTOOLIZE}..."
 $LIBTOOLIZE --automake --copy
 
 aclocal -I config
-autoheader
+# Only if you need things in AC_CONFIG_HEADERS
+# autoheader
 autoconf
 automake --foreign --add-missing --include-deps
 autoreconf --force --install
-

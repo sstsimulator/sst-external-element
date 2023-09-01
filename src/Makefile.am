@@ -2,17 +2,18 @@
 # 	$(MPI_CPPFLAGS) \
 # 	-I$(top_srcdir)/src
 
-# compdir = $(pkglibdir)
+compdir = $(pkglibdir)
 comp_LTLIBRARIES = libsimpleExternalElement.la
 
-SIMPLEEXTERNALELEMENT_SRC_FILES = \
-	simpleExternalElement.cc \
-	simpleExternalElement.h
+# SIMPLEEXTERNALELEMENT_SRC_FILES = \
+# 	simpleExternalElement.cc \
+# 	simpleExternalElement.h
 
 # EXTRA_DIST =
 
 libsimpleExternalElement_la_SOURCES = \
-	$(SIMPLEEXTERNALELEMENT_SRC_FILES)
+	simpleExternalElement.cc \
+	simpleExternalElement.h
 
 install-exec-hook:
 	$(SST_REGISTER_TOOL) simpleExternalElement  simpleExternalElement_LIBDIR=$(abs_srcdir)
