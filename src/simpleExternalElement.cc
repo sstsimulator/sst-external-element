@@ -1,8 +1,8 @@
-// Copyright 2009-2024 NTESS. Under the terms
+// Copyright 2009-2025 NTESS. Under the terms
 // of Contract DE-NA0003525 with NTESS, the U.S.
 // Government retains certain rights in this software.
 //
-// Copyright (c) 2009-2024, NTESS
+// Copyright (c) 2009-2025, NTESS
 // All rights reserved.
 //
 // This file is part of the SST software package. For license
@@ -29,7 +29,7 @@ SimpleExternalElement::SimpleExternalElement( SST::ComponentId_t id, SST::Params
         static_cast<uint64_t>(maxRepeats), static_cast<uint64_t>(printFreq));
 
     // Just register a plain clock for this simple example
-    registerClock("100MHz", new SST::Clock::Handler<SimpleExternalElement>(this, &SimpleExternalElement::clockTick));
+    registerClock("100MHz", new SST::Clock::Handler2<SimpleExternalElement, &SimpleExternalElement::clockTick>(this));
 
     // Tell SST to wait until we authorize it to exit
     registerAsPrimaryComponent();
