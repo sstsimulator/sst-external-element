@@ -29,7 +29,7 @@ SimpleExternalElement::SimpleExternalElement( SST::ComponentId_t id, SST::Params
         static_cast<uint64_t>(maxRepeats), static_cast<uint64_t>(printFreq));
 
     // Just register a plain clock for this simple example
-    registerClock("100MHz", new SST::Clock::Handler2<SimpleExternalElement, &SimpleExternalElement::clockTick>(this));
+    registerClock("100MHz", new SST::Clock::Handler<SimpleExternalElement, &SimpleExternalElement::clockTick>(this));
 
     // Tell SST to wait until we authorize it to exit
     registerAsPrimaryComponent();
